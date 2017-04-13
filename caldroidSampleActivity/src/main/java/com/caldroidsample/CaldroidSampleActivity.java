@@ -1,6 +1,7 @@
 package com.caldroidsample;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ public class CaldroidSampleActivity extends AppCompatActivity {
     private boolean undo = false;
     private CaldroidFragment caldroidFragment;
     private CaldroidFragment dialogCaldroidFragment;
+    private static final int REQUEST_CODE = 100;
 
     private void setCustomResourceForDates() {
         Calendar cal = Calendar.getInstance();
@@ -57,12 +60,12 @@ public class CaldroidSampleActivity extends AppCompatActivity {
 
         // Setup caldroid fragment
         // **** If you want normal CaldroidFragment, use below line ****
-        caldroidFragment = new CaldroidFragment();
+//        caldroidFragment = new CaldroidFragment();
 
         // //////////////////////////////////////////////////////////////////////
         // **** This is to show customized fragment. If you want customized
         // version, uncomment below line ****
-//		 caldroidFragment = new CaldroidSampleCustomFragment();
+		 caldroidFragment = new CaldroidSampleCustomFragment();
 
         // Setup arguments
 
@@ -107,6 +110,9 @@ public class CaldroidSampleActivity extends AppCompatActivity {
             public void onSelectDate(Date date, View view) {
                 Toast.makeText(getApplicationContext(), formatter.format(date),
                         Toast.LENGTH_SHORT).show();
+
+                EditText choosedate = (EditText) findViewById(R.id.choosedate);
+                choosedate.setText(formatter.format(date));
             }
 
             @Override
@@ -255,6 +261,18 @@ public class CaldroidSampleActivity extends AppCompatActivity {
 
                 dialogCaldroidFragment.show(getSupportFragmentManager(),
                         dialogTag);
+            }
+        });
+
+        Button detailButton = (Button) findViewById(R.id.detail_activity);
+
+        detailButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CaldroidSampleActivity.this, CaldroidDetailActivity.class);
+//                i.putExtra("key","문자열을 입력하세요");
+                startActivityForResult(i, REQUEST_CODE);
             }
         });
     }

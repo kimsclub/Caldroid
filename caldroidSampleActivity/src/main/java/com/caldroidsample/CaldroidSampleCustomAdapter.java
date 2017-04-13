@@ -3,6 +3,7 @@ package com.caldroidsample;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,16 @@ public class CaldroidSampleCustomAdapter extends CaldroidGridAdapter {
 		// Get dateTime of this cell
 		DateTime dateTime = this.datetimeList.get(position);
 		Resources resources = context.getResources();
+
+		Log.d("getWeekDay", "" + dateTime.getWeekDay());
+
+		if (dateTime.getWeekDay() == CaldroidFragment.SATURDAY) {
+			tv1.setTextColor(resources
+					.getColor(com.caldroid.R.color.caldroid_sky_blue));
+		} else if (dateTime.getWeekDay() == CaldroidFragment.SUNDAY) {
+			tv1.setTextColor(resources
+					.getColor(com.caldroid.R.color.caldroid_light_red));
+		}
 
 		// Set color of the dates in previous / next month
 		if (dateTime.getMonth() != month) {
