@@ -36,6 +36,24 @@
                 android:layout_weight="1"
                 android:text="@string/show_dialog"/>
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/button_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/detail_activity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/detail_activity"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/choosedate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="date"/>
 
         <TextView
             android:id="@+id/textview"
