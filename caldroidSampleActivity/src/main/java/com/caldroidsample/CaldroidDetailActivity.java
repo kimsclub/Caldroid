@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by chosh on 2017-04-13.
@@ -41,5 +43,17 @@ public class CaldroidDetailActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        Intent intent = getIntent();
+//        String selectedDate = intent.getStringExtra("selectedDate");
+        String selectedDate = intent.getExtras().getString("selectedDate");
+        String choosedate = intent.getExtras().getString("choosedate");
+
+        Log.d("selectedDate", "" + selectedDate);
+        Log.d("choosedate", "" + choosedate);
+
+        final TextView textTilte = (TextView) findViewById(R.id.choosedate1);
+        textTilte.setText(selectedDate);
+
     }
 }

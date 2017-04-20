@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -272,6 +273,12 @@ public class CaldroidSampleActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(CaldroidSampleActivity.this, CaldroidDetailActivity.class);
 //                i.putExtra("key","문자열을 입력하세요");
+
+                EditText choosedate = (EditText) findViewById(R.id.choosedate);
+
+                i.putExtra("selectedDate", "test12345123545");
+                i.putExtra("choosedate", choosedate.getText().toString());
+
                 startActivityForResult(i, REQUEST_CODE);
             }
         });

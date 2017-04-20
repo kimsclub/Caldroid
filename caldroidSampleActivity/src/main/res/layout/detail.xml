@@ -13,10 +13,10 @@
             android:layout_height="wrap_content"
             android:text="Detail"/>
         <EditText
-            android:id="@+id/choosedate"
+            android:id="@+id/choosedate1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="date"/>
+            android:text=""/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

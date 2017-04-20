@@ -53,7 +53,7 @@ public class CaldroidSampleCustomAdapter extends CaldroidGridAdapter {
 
 		if (dateTime.getWeekDay() == CaldroidFragment.SATURDAY) {
 			tv1.setTextColor(resources
-					.getColor(com.caldroid.R.color.caldroid_sky_blue));
+					.getColor(com.caldroid.R.color.caldroid_holo_blue_dark));
 		} else if (dateTime.getWeekDay() == CaldroidFragment.SUNDAY) {
 			tv1.setTextColor(resources
 					.getColor(com.caldroid.R.color.caldroid_light_red));
