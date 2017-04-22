@@ -13,8 +13,7 @@ import android.widget.Button;
 
 public class CaldroidDetailActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 100;
-    // 하하하
-    // 아아아
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
